@@ -1,8 +1,8 @@
-﻿using FoodBook.Api.BusinessLogic;
-using FoodBook.Api.DataAccess;
-using FoodBook.Api.Models;
+﻿
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RecipientBook.ServiceLibrary.Domains;
+using RecipientBook.ServiceLibrary.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +14,13 @@ namespace FoodBook.Api.Controllers
     [ApiController]
     public class RecipientController : ControllerBase
     {
-        public IActionResult AddNewRecipient(RecipientModel recipientModel)
+        [HttpGet]
+       
+        public IActionResult AddNewRecipient([FromQuery]RecipientEntity recipientEntity)
         {
-            var businessLogic = new RecipientBusinessLogic();
-            businessLogic.SaveRecipient(recipientModel);
+            
+            var businessLogic = new Recipient();
+            businessLogic.SaveRecipient(recipientEntity);
             return Ok();
         }
      

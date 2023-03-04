@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}foodbookapi
     build:
       context: .
-      dockerfile: FoodBook.Api/Dockerfile
+      dockerfile: src/FoodBook.Api/Dockerfile
 
      
 
