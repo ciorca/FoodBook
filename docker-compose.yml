@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  foodbook.api:
+    image: ${DOCKER_REGISTRY-}foodbookapi
+    build:
+      context: .
+      dockerfile: FoodBook.Api/Dockerfile
+
+     
+
+
+     
+      
+   
+
+  
